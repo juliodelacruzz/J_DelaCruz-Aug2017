@@ -32,8 +32,8 @@ public class Calculate {
 		return ((operand2*operand2)-(4.0*operand1*operand3));
 	}
 	//This method accepts three integers and returns a string
-	public static int toImproperFrac (int a, int b, int c) {
-		return (((a*)))
+	public static String toImproperFrac (int a, int b, int c) {
+		return (((a*c)+b)+ "/"+c);
 	}
 			
 	}

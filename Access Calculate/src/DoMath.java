@@ -9,6 +9,7 @@ public class DoMath {
 		System.out.println(Calculate.cube(5));
 		System.out.println(Calculate.average(25.0, 41.7));
 		System.out.println(Calculate.average(42.0, 33.9, 12.3));
+		System.out.println(Calculate.toImproperFrac(3, 1, 2));
 
 
 	}
