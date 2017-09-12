@@ -42,7 +42,19 @@ public class Calculate {
 		return (wholeNum + "_" + Numerator + "/" + b);
 		
 	}
+	//This method converts a binomial multiplication 
+	public static String foil (int a, int b, int c, int d) {
+		int first = (a*d);
+		int second = (a*d) + (b*c);
+		int third = (b*d);
+		return (first + "n^2" + "+" + second + "n" + "+" + third);
+			
 	}
+	//This method determines whether or not one integer is evenly divisible by another. It accepts two integers and returns a boolean
+	public static  
+	
+	}
+	
 
 			
 	

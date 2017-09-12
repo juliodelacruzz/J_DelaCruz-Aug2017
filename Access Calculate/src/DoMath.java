@@ -11,7 +11,7 @@ public class DoMath {
 		System.out.println(Calculate.average(42.0, 33.9, 12.3));
 		System.out.println(Calculate.toImproperFrac(3, 1, 2));
 		System.out.println(Calculate.toMixedNum(7,2));
-
+		System.out.println(Calculate.foil(2, 3, 6, -7));
 
 	}
 
