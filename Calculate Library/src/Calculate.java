@@ -35,8 +35,17 @@ public class Calculate {
 	public static String toImproperFrac (int a, int b, int c) {
 		return (((a*c)+b)+ "/"+c);
 	}
-			
+	//This method converts an improper fraction into a mixed number. It accepts two integers and returns a string.
+	public static String toMixedNum (int a, int b) {
+		int wholeNum = (a/b);
+		int Numerator = (a%b);
+		return (wholeNum + "_" + Numerator + "/" + b);
+		
 	}
+	}
+
+			
+	
 
 
 	
