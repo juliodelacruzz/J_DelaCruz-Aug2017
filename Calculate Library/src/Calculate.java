@@ -2,10 +2,10 @@
 // September 5 2017
 // This is our home grown library that will contain math methods.
 public class Calculate {
-	
+
 	// This method takes an integer and returns its integer square
 	public static int square (int operand) {
-		return operand*operand;
+	     	return operand*operand;
 	}
 	//This method takes an integer and returns its integer cubed
 	public static int cube (int operand) {
@@ -40,7 +40,7 @@ public class Calculate {
 		int wholeNum = (a/b);
 		int Numerator = (a%b);
 		return (wholeNum + "_" + Numerator + "/" + b);
-		
+
 	}
 	//This method converts a binomial multiplication 
 	public static String foil (int a, int b, int c, int d) {
@@ -48,12 +48,45 @@ public class Calculate {
 		int second = (a*d) + (b*c);
 		int third = (b*d);
 		return (first + "n^2" + "+" + second + "n" + "+" + third);
-			
+
 	}
 	//This method determines whether or not one integer is evenly divisible by another. It accepts two integers and returns a boolean
-	public static  
+	public static boolean isDivisbleBy (int a, int b) {
+		if (a % b == 0) {
+			return (true);
+		}	else {
+			return (false);
+		}
+	}
+	//This method returns the absolute value of the number passed. It accepts a double and returns a double.
+	public static double absValue (double a) {
+		if (a >= 0) {
+			return (a);
+		} else {
+			return (a * -1);
+		}
+	}
+	// This method returns the larger of the values passed. Accepts two doubles and returns a double.
+	public static double max (double a, double b) {
+		if (a > b) {
+			return (a);
+		} else { 
+			return (b);
+		}
+	 
+		}
+	// this method oveerloads the the original max method. It accpets three doubles and returns a double.
 	
 	}
+
+		
+	
+	
+
+		
+	
+	
+	
 	
 
 			
