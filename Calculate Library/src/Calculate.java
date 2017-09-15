@@ -75,8 +75,40 @@ public class Calculate {
 		}
 	 
 		}
-	// this method oveerloads the the original max method. It accpets three doubles and returns a double.
-	
+	// this method overloads the the original max method. It accepts three doubles and returns a double.
+	public static double max (double a, double b, double c) {
+		if (a > b) {
+			return (a);
+		} else if (b > c && b > a) {
+			return (b);	
+		} else {
+			return (c);
+		}
+		
+	}
+	// this method returns the smaller of the values. It accepts two int and returns an int.
+	public static int min (int a, int b) {
+		if (a < b) {
+			return (a);
+			
+		} else {
+			return (b);
+		}
+		
+	}
+	//This methods rounds a double correctly to 2 decimal places and returns a double
+	public static double round2 (double a) {
+		double lastDigit = a * 1000%10;
+		if (lastDigit < 5) {
+			return((a*1000) - lastDigit)/1000;
+		} else {
+			return ((a * 1000) - lastDigit + 10)/1000;
+		}
+		
+		
+		
+	}
+
 	}
 
 		
