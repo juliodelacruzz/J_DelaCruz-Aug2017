@@ -105,11 +105,18 @@ public class Calculate {
 			return ((a * 1000) - lastDigit + 10)/1000;
 		}
 		
-		
-		
-	}
 
 	}
+	//This method accepts a double and an integer and returns a double.
+	public static double exponent (double a, int b) {
+		if (b == 0) {
+			return (1);
+	
+		
+
+}
+}
+}
 
 		
 	
