@@ -2,7 +2,7 @@
 // September 5 2017
 // This is our home grown library that will contain math methods.
 public class Calculate {
-
+	//Part One
 	// This method takes an integer and returns its integer square
 	public static int square (int operand) {
 	     	return operand*operand;
@@ -42,6 +42,7 @@ public class Calculate {
 		return (wholeNum + "_" + Numerator + "/" + b);
 
 	}
+	//Part Two
 	//This method converts a binomial multiplication 
 	public static String foil (int a, int b, int c, int d) {
 		int first = (a*d);
@@ -107,16 +108,29 @@ public class Calculate {
 		
 
 	}
-	//This method accepts a double and an integer and returns a double.
-	public static double exponent (double a, int b) {
-		if (b == 0) {
-			return (1);
-	
-		
-
-}
-}
-}
+	//Part Three
+	//This method raises a value to a positive integer power.
+	public static double exponent(int base, double power){
+		double answer = 1.0;
+		if(power<0) {
+			throw new IllegalArgumentException("Can't take in negative values for exponent");
+		}
+		if(power == 0){ //anything to the zero power is zero
+					return (1);
+				}
+				for(int i = 1; i <= power; i++){
+					answer *= base;
+				}
+				return(answer);
+	}
+	//This returns the factorial of the value passed. Takes in an integer and returns an integer
+	public static int factorial (int a) {
+		int ans = 1;
+		if(x<0) { 
+			throw new IllegalArgumentException("Can't take in negative values");
+		}
+	}
+	}
 
 		
 	
