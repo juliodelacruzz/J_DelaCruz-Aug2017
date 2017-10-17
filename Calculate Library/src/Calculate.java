@@ -126,9 +126,16 @@ public class Calculate {
 	//This returns the factorial of the value passed. Takes in an integer and returns an integer
 	public static int factorial (int a) {
 		int ans = 1;
-		if(x<0) { 
+		if(a<0) { 
 			throw new IllegalArgumentException("Can't take in negative values");
 		}
+		if(a == 0) {
+			return(1);		
+		}
+		for(int i = 0; i <= i; i++) {
+			ans *= i;
+		}
+		return (ans);
 	}
 	}
 
