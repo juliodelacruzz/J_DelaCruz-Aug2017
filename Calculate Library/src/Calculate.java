@@ -137,7 +137,70 @@ public class Calculate {
 		}
 		return (ans);
 	}
+	//This method accepts an integer and displays a true or false value whether the integer is true or false
+			public static boolean isPrime(int num){ //prime is whether divisible or not
+				boolean testedValue;
+				for(int i = num - 1; i > 1; i--){
+					testedValue = Calculate.isDivisbleBy(num, i);
+					if(testedValue == true){
+						return(false);
+					}
+				}
+				return(true);
+			}
+	//This method accepts two integers and shows the Greatest Common Factor of two integers
+			public static int gcf(int a, int b){
+				int gfc = 1;
+				for(int i=1; i<= a; i++){
+					if(isDivisbleBy(a,i) && isDivisbleBy(b, i)){
+						gfc =1; //checking if divisible
+					}
+				}
+				return(gfc); //returning final value
+			}
+	//Accepts a double and returns the square root of a double
+			public static double sqrt(double number) {
+			if(number < 0) { //setting restrictions
+				throw new IllegalArgumentException("Cannot square root negative values");
+			}else if(number == 0) { //root zero is zero
+				return 0;
+			}
+			double intValue = 0; //setting variable
+			while(intValue * intValue <number) {
+				intValue++;
+			}
+			if((intValue *intValue) % number == 0) {
+				return intValue; //finding root
+			}else { //rounding number
+				return .5 * (number/intValue + intValue);
+			}
 	}
+	//Part Four Quad Form
+			public static String quadForm(int a, int b, int c) {
+				double discriminant = discriminant(a,b,c);
+				if(a == 0) {
+					throw new IllegalArgumentException("Is not a quadratic function");
+				}else { //if its zero for the squared then it cannot be quadratic
+					if(discriminant < 0) { //if the discriminant is less than one there will be no roots
+						return ("no real roots");
+					}
+				}
+				double rootNum1 = (-b+ sqrt(discriminant))/(2*a);
+				double rootNum2 = (-b- sqrt(discriminant))/(2*a);
+				if(rootNum1 != rootNum2) {
+					rootNum1 = round2(rootNum1);
+					rootNum2 = round2(rootNum2);
+					if(rootNum1 > rootNum2) {
+						return rootNum2 + " and " + rootNum1;
+					}else{
+						return rootNum1 + " and " + rootNum2;
+					}
+				}else{
+					rootNum1 = round2(rootNum1);
+					return rootNum1 +"";
+				}
+			}
+}
 
 		
 	
