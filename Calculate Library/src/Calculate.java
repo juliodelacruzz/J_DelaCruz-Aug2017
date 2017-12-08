@@ -149,15 +149,16 @@ public class Calculate {
 				return(true);
 			}
 	//This method accepts two integers and shows the Greatest Common Factor of two integers
-			public static int gcf(int a, int b){
-				int gfc = 1;
-				for(int i=1; i<= a; i++){
-					if(isDivisbleBy(a,i) && isDivisbleBy(b, i)){
-						gfc =1; //checking if divisible
+			 public static int gcf(int num1, int num2) {
+			        
+					int greatestCommonFactor = 1;
+					for(int i=1; i<=num1; i++) {
+						if(isDivisibleBy(num1,i) && isDivisibleBy(num2,i)) {
+							greatestCommonFactor=i;
+						}
 					}
-				}
-				return(gfc); //returning final value
-			}
+					return (greatestCommonFactor);
+					}
 	//Accepts a double and returns the square root of a double
 			public static double sqrt(double number) {
 			if(number < 0) { //setting restrictions
@@ -175,31 +176,27 @@ public class Calculate {
 				return .5 * (number/intValue + intValue);
 			}
 	}
-	//Part Four Quad Form
-			public static String quadForm(int a, int b, int c) {
-				double discriminant = discriminant(a,b,c);
-				if(a == 0) {
-					throw new IllegalArgumentException("Is not a quadratic function");
-				}else { //if its zero for the squared then it cannot be quadratic
-					if(discriminant < 0) { //if the discriminant is less than one there will be no roots
-						return ("no real roots");
+	//Uses the coefficients of a quadratic equation in standard form and approximates real roots
+			 public static String quadForm (int a, int b, int c) {	
+					if(discriminant(a, b, c) < 0 ) {
+						return "No real roots";
+					}else if (discriminant(a, b, c) == 0) {
+						double realroot = -b / (2.0 * a);
+						return "" + realroot;
+					}else {
+						double sqrt = sqrt(discriminant(a, b, c));
+						double root1 = (-b + sqrt) / (2 * a);
+						double root2 = (-b - sqrt) / (2 * a);
+						double roundroot1 = round2(root1);
+						double roundroot2 = round2(root2);
+						if (min(roundroot1, roundroot2) == roundroot1) {
+							return roundroot1 + " and " + roundroot2;
+						}else {
+							return roundroot2 + " and " + roundroot1;
+						}
 					}
-				}
-				double rootNum1 = (-b+ sqrt(discriminant))/(2*a);
-				double rootNum2 = (-b- sqrt(discriminant))/(2*a);
-				if(rootNum1 != rootNum2) {
-					rootNum1 = round2(rootNum1);
-					rootNum2 = round2(rootNum2);
-					if(rootNum1 > rootNum2) {
-						return rootNum2 + " and " + rootNum1;
-					}else{
-						return rootNum1 + " and " + rootNum2;
-					}
-				}else{
-					rootNum1 = round2(rootNum1);
-					return rootNum1 +"";
-				}
-			}
+				}	
+			
 }
 
 		
