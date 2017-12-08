@@ -110,19 +110,21 @@ public class Calculate {
 	}
 	//Part Three
 	//This method raises a value to a positive integer power.
-	public static double exponent(int base, double power){
+	public static double exponent(int base, int power){
 		double answer = 1.0;
 		if(power<0) {
 			throw new IllegalArgumentException("Can't take in negative values for exponent");
 		}
-		if(power == 0){ //anything to the zero power is zero
+		if(power == 0.0){ //anything to the zero power is zero
 					return (1);
 				}
 				for(int i = 1; i <= power; i++){
 					answer *= base;
 				}
 				return(answer);
-	}
+			    }
+	
+	
 	//This returns the factorial of the value passed. Takes in an integer and returns an integer
 	public static int factorial (int a) {
 		int ans = 1;
@@ -141,7 +143,7 @@ public class Calculate {
 			public static boolean isPrime(int num){ //prime is whether divisible or not
 				boolean testedValue;
 				for(int i = num - 1; i > 1; i--){
-					testedValue = Calculate.isDivisbleBy(num, i);
+					testedValue = Calculate.isDivisibleBy(num, i);
 					if(testedValue == true){
 						return(false);
 					}
@@ -177,27 +179,33 @@ public class Calculate {
 			}
 	}
 	//Uses the coefficients of a quadratic equation in standard form and approximates real roots
-			 public static String quadForm (int a, int b, int c) {	
-					if(discriminant(a, b, c) < 0 ) {
-						return "No real roots";
-					}else if (discriminant(a, b, c) == 0) {
-						double realroot = -b / (2.0 * a);
-						return "" + realroot;
-					}else {
-						double sqrt = sqrt(discriminant(a, b, c));
-						double root1 = (-b + sqrt) / (2 * a);
-						double root2 = (-b - sqrt) / (2 * a);
-						double roundroot1 = round2(root1);
-						double roundroot2 = round2(root2);
-						if (min(roundroot1, roundroot2) == roundroot1) {
-							return roundroot1 + " and " + roundroot2;
-						}else {
-							return roundroot2 + " and " + roundroot1;
-						}
+			public static String quadForm(int a, int b, int c) {
+				double discriminant = discriminant(a,b,c);
+				if(a == 0) {
+					throw new IllegalArgumentException("Is not a quadratic function");
+				}else { //if its zero for the squared then it cannot be quadratic
+					if(discriminant < 0) { //if the discriminant is less than one there will be no roots
+						return ("no real roots");
 					}
-				}	
+				}
+				double rootNum1 = (-b+ sqrt(discriminant))/(2*a);
+				double rootNum2 = (-b- sqrt(discriminant))/(2*a);
+				if(rootNum1 != rootNum2) {
+					rootNum1 = round2(rootNum1);
+					rootNum2 = round2(rootNum2);
+					if(rootNum1 > rootNum2) {
+						return rootNum2 + " and " + rootNum1;
+					}else{
+						return rootNum1 + " and " + rootNum2;
+					}
+				}else{
+					rootNum1 = round2(rootNum1);
+					return rootNum1 +"";
+				}
+			}
+		}	
 			
-}
+
 
 		
 	
